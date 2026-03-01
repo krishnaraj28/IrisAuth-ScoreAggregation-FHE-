@@ -1,0 +1,14 @@
+
+**Privacy-Preserving Biometric Authentication System with Explainable AI**
+
+This system authenticates users using biometric feature vectors while keeping all data fully encrypted. It uses **TenSEAL CKKS Fully Homomorphic Encryption (FHE)** — meaning the entire authentication process happens in the encrypted domain, so no raw biometric data is ever exposed.
+
+**Admin side:** The admin uploads a JSON dataset of user biometric features. Each user's feature vectors are normalized (L2) and encrypted using individual CKKS keypairs with parameters `poly_modulus_degree=8192` and `global_scale=2^40`. The encrypted templates are stored in a secure database.
+
+**User side:** When a user wants to authenticate, they submit their feature vectors. These are normalized and encrypted using the target user's public key. Cosine similarity is then computed entirely in the encrypted domain using homomorphic dot products — the server never sees any plaintext values. The private key is used only at the final decryption step.
+
+**Authentication decision:** Two methods are used together — a rule-based check (at least one feature ≥ 0.999 in at least N templates) and a traditional threshold check (average similarity ≥ 0.70). Both results are compared and combined for the final decision.
+
+**Explainable AI (XAI):** After every authentication attempt the system generates a full decision explanation — showing template scores, feature-level breakdowns, confidence levels, near-miss warnings, and a recommended action. This is available as a downloadable **JSON report** and a full **PDF report** with 6 visualisation charts.
+
+
