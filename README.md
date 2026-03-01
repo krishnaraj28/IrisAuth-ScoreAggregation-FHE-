@@ -118,7 +118,7 @@ This ensures **auditability, interpretability, and trustworthiness**.
 
 > Privacy + Cryptography + Explainability
 
-RisAuth demonstrates that biometric systems can be:
+HomoIris demonstrates that biometric systems can be:
 
 * secure
 * transparent
@@ -133,6 +133,3 @@ without compromising usability or performance.
 
 **HomoIris** combines homomorphic encryption, multi-template similarity aggregation, and explainable AI to deliver a next-generation biometric authentication system that is secure by design, transparent by default, and reliable in real-world conditions.
 
----
-
-✅ *Want a version with badges, installation steps, screenshots, and architecture diagram sections added? I can generate a complete production-ready README template for your repository.*
